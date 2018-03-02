@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'pry-byebug'
 
 group :development, :test do
   gem 'byebug'

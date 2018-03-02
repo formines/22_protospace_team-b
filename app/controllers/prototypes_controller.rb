@@ -20,6 +20,14 @@ class PrototypesController < ApplicationController
      end
   end
 
+  def update
+    @prototype = Prototype.find(params[:id])
+    if @prototype.user_id == current_user.id
+      @prototype.update(prototype_params)
+    end
+    redirect_to :root
+  end
+
   def edit
     @prototype = Prototype.find(params[:id])
   end
@@ -32,8 +40,8 @@ class PrototypesController < ApplicationController
     if prototype.user_id == current_user.id
       prototype.destroy
     end
-    redirect_to "/prototypes"  
-  end  
+    redirect_to "/prototypes"
+  end
 
   private
 
